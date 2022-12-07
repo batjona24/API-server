@@ -8,15 +8,16 @@ app.use(express.json());
 
 app.post('/sign-up',async (request, response) => {
   const user_data = request.body;
-  if (CredentialsValidation (user_data.username, user_data.password)) {
-    await UserDatabase.raw(`insert into user (username , password) values ('${user_data.username}','${user_data.password}')`);
+  try{
+  const check_validation = await CredentialsValidation (user_data.username, user_data.password);
+   await UserDatabase.raw(`insert into user (username , password) values ('${user_data.username}','${user_data.password}')`);
     const result = await UserDatabase.raw(`select * from user order by id desc limit 1`);
     response.status(200);
     response.json(result);
   }
-  else {
+  catch(error){
     response.status(404);
-    response.json('Your username does exist or your username must be 5 to 12 characters');
+    response.json(error.message);
   }
 });
 
@@ -25,7 +26,7 @@ app.post('/sign-in',async (request, response) => {
   const result = await UserDatabase.raw(`select username from user where username='${user_data.username}' and password='${user_data.password}'`);
   if (result.length != 0){
     response.status(200);
-    response.json(result);
+    response.json(result[0]);
   }
   else {
     response.status(404);
