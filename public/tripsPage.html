@@ -22,17 +22,20 @@
             <label>Date</label>
             <input type="date" name="date" placeholder="Select a date">
 
-            <label>Destination</label>
-            <input type="destination" name="destination" placeholder="Select a destination">
+            <label>Vacation</label>
+            <input type="text" name="Vacation" placeholder="Select a destination">
 
             <label>Days</label>
-            <input type="number" name="days" placeholder="Select the number of days">
+            <input type="number" name="days" placeholder="Select the number of days" min="1">
 
             <label>Rating</label>
-            <input type="number" name="rating" placeholder="Rating">
+            <input type="number" name="rating" placeholder="Rating" min="1" max="10">
 
-            <button type="submit" name="submit">Create trip!</button>
+            <button id="btn" type="submit" name="submit">Create trip!</button>
         </form>
-    </div>
+        <button id="showTrip" type="submit" name="submit">Show trips!</button>
+    </div> <br>
+    <div id="container"></div>
+    <script src="tripsPage.js"></script>
   </body>
 </html>

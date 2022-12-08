@@ -15,3 +15,8 @@ body {
 h1, h2 {
     text-align: center;
 }
+p {
+    text-align: center;
+    font-size: 18px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
