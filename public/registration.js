@@ -5,11 +5,9 @@ const form = document.getElementById("registration");
 const onSubmit = async (event) => {
     event.preventDefault();
     const formData = new FormData(form);
-    const date = formData.get("date");
-    const destination = formData.get("destination");
-    const days = formData.get("number");
-    const rating = formData.get('rating');
-    const values = { date, destination, days, rating };
+    const username = formData.get("username");
+    const password = formData.get("password");
+    const values = { username, password };
     const response = await fetch('/api/sign-up', {
         method: 'POST', headers: {
             'Content-Type': 'application/json'
