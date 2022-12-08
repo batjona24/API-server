@@ -37,11 +37,15 @@ async function createTrip() {
         const vacation = row.insertCell();
         const days = row.insertCell();
         const rating = row.insertCell();
+        // const update = row.insertCell();
+        // const deleteTrip = row.insertCell();
         id.innerText = (`${trip.id}`);
         date.innerText = (`${trip.date}`);
         vacation.innerText = (`${trip.vacation}`);
         days.innerText = (`${trip.days}`);
         rating.innerText = (`${trip.rating}`);
+        // update.innerHTML = (<button type='submit' name='update'>Update</button>);
+        // deleteTrip.innerHTML = (<button type='submit' name='delete'>Delete</button>);
 
         
         // table.innerText = `ID: ${trip.id} , Date:${trip.date} , Vacation: ${trip.vacation} , Days: ${trip.days}, Rating: ${trip.rating} `     
