@@ -8,17 +8,23 @@
     <script src="index.js"></script>
   </head>
   <body>
+    <nav>
+      <ul id="">
+        <li><a class="active1" href="#">REGISTER</a></li>
+        <li><a class="nonactive1" href="./login.html">LOG IN</a></li>
+        <li><a class="nonactive1" href="./tripsPage.html">TRIPS PAGE</a></li>
+      </ul>
+    </nav>
     <fieldset>
-        <legend>Registration form:</legend>
-        <h2>Please enter a username and a password to make the registration!</h2><br>
+        <legend>LOG IN</legend>
+        <h2>Please enter your username and password to log in!</h2><br>
         <label for="username">Username:</label><br>
         <input type="text" id="username" name="username" placeholder="Enter your username..." required>
         <label for="password">Password:</label><br>
         <input type="text" id="password" name="password" placeholder="Enter your password..." required>
         <br>
-        <p>Your password must contain <strong>at least</strong> a number and a symbol!</p>
-        <br>
-        <button type="submit" name="submit">REGISTER</button>
+        <button type="submit" name="submit">LOG IN</button>
     </fieldset>
+
   </body>
 </html>
