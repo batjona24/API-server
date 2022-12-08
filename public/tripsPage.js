@@ -31,12 +31,12 @@ async function createTrip() {
     container.innerHTML = ''
     const table = document.createElement('table');
     for (const trip of data) {  
-        const row = table.insertRow[0];
-        const id = row.insertCell(0); 
-        const date = row.insertCell(1);
-        const vacation = row.insertCell(2);
-        const days = row.insertCell(3);
-        const rating = row.insertCell(4);
+        const row = table.insertRow();
+        const id = row.insertCell(); 
+        const date = row.insertCell();
+        const vacation = row.insertCell();
+        const days = row.insertCell();
+        const rating = row.insertCell();
         id.innerText = (`${trip.id}`);
         date.innerText = (`${trip.date}`);
         vacation.innerText = (`${trip.vacation}`);
