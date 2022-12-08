@@ -31,12 +31,18 @@ async function createTrip() {
     container.innerHTML = ''
     const table = document.createElement('table');
     for (const trip of data) {  
-        const row = table.insertRow(-1);
-        row.insertCell(`${trip.id}`); 
-        row.insertCell(`${trip.date}`);
-        row.insertCell(`${trip.vacation}`);
-        row.insertCell(`${trip.days}`);
-        row.insertCell(`${trip.rating}`);
+        const row = table.insertRow[0];
+        const id = row.insertCell(0); 
+        const date = row.insertCell(1);
+        const vacation = row.insertCell(2);
+        const days = row.insertCell(3);
+        const rating = row.insertCell(4);
+        id.innerText = (`${trip.id}`);
+        date.innerText = (`${trip.date}`);
+        vacation.innerText = (`${trip.vacation}`);
+        days.innerText = (`${trip.days}`);
+        rating.innerText = (`${trip.rating}`);
+
         
         // table.innerText = `ID: ${trip.id} , Date:${trip.date} , Vacation: ${trip.vacation} , Days: ${trip.days}, Rating: ${trip.rating} `     
     }container.appendChild(table);
