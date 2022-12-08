@@ -22,7 +22,7 @@
         <label for="username">Username:</label><br>
         <input type="text" id="username" name="username" placeholder="Enter your username..." minlength="5" maxlength="12"  required><br><br>
         <label for="password">Password:</label><br>
-        <input type="text" id="password" name="password" placeholder="Enter your password..." minlength="5" maxlength="12" pattern="/^(?=.[!?.:])(?=.*\d)(?=.[A-Za-z])/" required> <!--reg ex not fixed -->
+        <input type="password" id="password" name="password" placeholder="Enter your password..." minlength="5" maxlength="12" pattern='/^(?=[A-Za-z0-9!?.:]+$)/' required> <!--reg ex not fixed "/^(?=.[!?.:])(?=.*\d)(?=[A-Za-z]+$)/"-->
         <br>  
         <p>Your password must contain <strong>at least</strong> a number and a symbol!</p>
         <br>
