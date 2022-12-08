@@ -20,10 +20,10 @@
         <legend>Registration form:</legend>
         <h2>Please enter a username and a password to make the registration!</h2><br>
         <label for="username">Username:</label><br>
-        <input type="text" id="username" name="username" placeholder="Enter your username..." required><br><br>
+        <input type="text" id="username" name="username" placeholder="Enter your username..." minlength="5" maxlength="12"  required><br><br>
         <label for="password">Password:</label><br>
-        <input type="text" id="password" name="password" placeholder="Enter your password..." required>
-        <br>
+        <input type="text" id="password" name="password" placeholder="Enter your password..." minlength="5" maxlength="12" pattern="/^(?=.[!?.:])(?=.*\d)(?=.[A-Za-z])/" required> <!--reg ex not fixed -->
+        <br>  
         <p>Your password must contain <strong>at least</strong> a number and a symbol!</p>
         <br>
         <button type="submit" name="submit">REGISTER</button>
