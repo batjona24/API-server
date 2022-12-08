@@ -5,20 +5,20 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <title>Address Form</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <script src="index.js"></script>
+    <link rel="stylesheet" href="tripsPage.css"/>
   </head>
   <body>
     <nav>
-      <ul id="">
-        <li><a class="active1" href="#">REGISTER</a></li>
-        <li><a class="nonactive1" href="./login.html">LOG IN</a></li>
+      <ul id="menu">
+        <li><a class="active1" href="./sign-up.html">REGISTER</a></li>
+        <li><a class="nonactive1" href="./log-in.html">LOG IN</a></li>
         <li><a class="nonactive1" href="./tripsPage.html">TRIPS PAGE</a></li>
       </ul>
     </nav>
     <div>
         <h1>TRIP PAGE</h1>
         <h2>Create a trip now!</h2>
-        <form>
+        <form id="trips">
             <label>Date</label>
             <input type="date" name="date" placeholder="Select a date">
 
@@ -30,6 +30,8 @@
 
             <label>Rating</label>
             <input type="rating" name="rating" placeholder="Rating">
+
+            <button type="submit" name="submit">Create trip!</button>
         </form>
     </div>
   </body>

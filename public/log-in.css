@@ -1,0 +1,14 @@
+body {
+    background-color: beige;
+}
+#menu {
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    text-decoration: none;
+    margin-right: 50px;
+}
+#login {
+    text-align: center;
+}

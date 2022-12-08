@@ -5,20 +5,21 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <title>Address Form</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="/log-in.css"/>
   </head>
   <body>
     <nav>
-      <ul id="">
-        <li><a class="active1" href="#">REGISTER</a></li>
-        <li><a class="nonactive1" href="./login.html">LOG IN</a></li>
+      <ul id="menu">
+        <li><a class="active1" href="./sign-up.html">REGISTER</a></li>
+        <li><a class="nonactive1" href="log-in.html">LOG IN</a></li>
         <li><a class="nonactive1" href="./tripsPage.html">TRIPS PAGE</a></li>
       </ul>
     </nav>
-    <form>
+    <form id="login">
         <legend>LOG IN</legend>
         <h2>Please enter your username and password to log in!</h2><br>
         <label for="username">Username:</label><br>
-        <input type="text" id="username" name="username" placeholder="Enter your username..." required>
+        <input type="text" id="username" name="username" placeholder="Enter your username..." required><br><br>
         <label for="password">Password:</label><br>
         <input type="text" id="password" name="password" placeholder="Enter your password..." required>
         <br>
