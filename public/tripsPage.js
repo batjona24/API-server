@@ -5,7 +5,7 @@ const onSubmit = async (event) => {
     const formData = new FormData(form);
     const date = formData.get("date");
     const vacation = formData.get("vacation");
-    const days = formData.get('number');
+    const days = formData.get(days);
     const rating = formData.get("rating");
     const values = { date, vacation, days, rating };
     const response = await fetch('/api/trip', {
@@ -37,13 +37,16 @@ async function createTrip() {
         const vacation = row.insertCell();
         const days = row.insertCell();
         const rating = row.insertCell();
-        // const update = row.insertCell();
-        // const deleteTrip = row.insertCell();
+        const update = row.insertCell();
+        const deleteTrip = row.insertCell();
         id.innerText = (`${trip.id}`);
         date.innerText = (`${trip.date}`);
         vacation.innerText = (`${trip.vacation}`);
         days.innerText = (`${trip.days}`);
         rating.innerText = (`${trip.rating}`);
+        // const btn_update = document.childElement('button'); 
+        // update.appendChild(btn_update); 
+        // update.innerHTML=('btn_update'); 
         // update.innerHTML = (<button type='submit' name='update'>Update</button>);
         // deleteTrip.innerHTML = (<button type='submit' name='delete'>Delete</button>);
 
