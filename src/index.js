@@ -11,14 +11,13 @@ app.use('/', express.static('./public', {extensions: ['html']}));
 app.post('/api/sign-up',async (request, response) => {
   const user_data = request.body;
   try{
-    const check_validation = await CredentialsValidation (user_data.username, user_data.password);
+    await CredentialsValidation (user_data.username, user_data.password);
     await UserDatabase.raw(`insert into user (username , password) values ('${user_data.username}','${user_data.password}')`);
     const result = await UserDatabase.raw(`select * from user order by id desc limit 1`);
     response.status(200);
     response.json(result);
-      
-  }
-  catch (error){
+  }   
+  catch(error){
     response.status(404);
     response.json(error.message);
   }
