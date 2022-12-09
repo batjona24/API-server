@@ -1,5 +1,4 @@
 import express from 'express';
-import UserDatabase from './userdb.js';
 import database from './database.js';
 import CredentialsValidation from './CredentialsValidation.js';
 
@@ -12,8 +11,8 @@ app.post('/api/sign-up',async (request, response) => {
   const user_data = request.body;
   try{
     await CredentialsValidation (user_data.username, user_data.password);
-    await UserDatabase.raw(`insert into user (username , password) values ('${user_data.username}','${user_data.password}')`);
-    const result = await UserDatabase.raw(`select * from user order by id desc limit 1`);
+    await database.raw(`insert into users (username , password) values ('${user_data.username}','${user_data.password}')`);
+    const result = await database.raw(`select * from users order by id desc limit 1`);
     response.status(200);
     response.json(result);
   }   
@@ -25,7 +24,7 @@ app.post('/api/sign-up',async (request, response) => {
 
 app.post('/api/sign-in',async (request, response) => {
   const user_data = request.body;
-  const result = await UserDatabase.raw(`select username from user where username='${user_data.username}' and password='${user_data.password}'`);
+  const result = await database.raw(`select username,id from users where username='${user_data.username}' and password='${user_data.password}'`);
   if (result.length != 0){
     response.status(200);
     response.json(result[0]);
@@ -34,6 +33,19 @@ app.post('/api/sign-in',async (request, response) => {
     response.status(404);
     response.json('User not found! Username or password invalid!');
   } 
+});
+
+app.get('/api/trip/:id', async (request, response) => {
+  const id = request.params.id;
+  const result = await database.raw(`select * from trips where id = ${id}`);
+  if(result.length !== 0) {
+    response.status(200);
+    response.json(result);  
+  }
+  else {
+    response.status(404);
+    response.json(`The trip with id = ${id} NOT FOUND!`);
+  }  
 });
 
 app.post('/api/trip', async (request, response) => {

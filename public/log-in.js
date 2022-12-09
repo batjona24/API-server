@@ -14,6 +14,9 @@ const onSubmit = async (event) => {
         }, body: JSON.stringify(values)
     })
     const data = await response.json();
+    console.log(data);
+    const user_id =data.id;
+    window.localStorage.setItem("values",user_id);
     window.location.pathname = '/tripsPage';
     console.log(data);
 };
