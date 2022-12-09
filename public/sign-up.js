@@ -14,7 +14,7 @@ const onSubmit = async (event) => {
         }, body: JSON.stringify(values)
     })
     const data = await response.json();
-    window.location.pathname('/log-in');
+    window.location.pathname = '/log-in';
     console.log(data);
 };
 

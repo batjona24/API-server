@@ -14,7 +14,7 @@ const onSubmit = async (event) => {
         }, body: JSON.stringify(values)
     })
     const data = await response.json();
-    window.location.pathname('/tripPage');
+    window.location.pathname = '/tripsPage';
     console.log(data);
 };
 

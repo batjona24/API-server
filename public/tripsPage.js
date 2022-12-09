@@ -22,9 +22,9 @@ form.addEventListener("submit", onSubmit);
 
 const btn = document.getElementById("showTrip");
 const container = document.getElementById('container');
-btn.addEventListener('click', createTrip);
+btn.addEventListener('click', showTrips);
 
-async function createTrip() {
+async function showTrips() {
     const response = await fetch('/api/trip');
     const data = await response.json();
     console.log(data);
@@ -52,7 +52,8 @@ async function createTrip() {
 
         
         // table.innerText = `ID: ${trip.id} , Date:${trip.date} , Vacation: ${trip.vacation} , Days: ${trip.days}, Rating: ${trip.rating} `     
-    }container.appendChild(table);
+    }
+    container.appendChild(table);
 }
 
-createTrip();
+showTrips();
