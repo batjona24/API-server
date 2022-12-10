@@ -3,11 +3,12 @@ const form = document.getElementById("trips");
 const onSubmit = async (event) => {
     event.preventDefault();
     const formData = new FormData(form);
+    const user_id = window.localStorage.getItem("user_id");
     const date = formData.get("date");
     const vacation = formData.get("vacation");
     const days = formData.get("days");
     const rating = formData.get("rating");
-    const values = { date, vacation, days, rating };
+    const values = { user_id,date, vacation, days, rating };
     const response = await fetch('/api/trip', {
         method: 'POST', headers: {
             'Content-Type': 'application/json'
