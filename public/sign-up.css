@@ -13,3 +13,8 @@ body {
     text-align: center;
     font-size: 18px;
 }
+#error {
+    text-align: center;
+    font-size: 18px;
+    color: red;
+}

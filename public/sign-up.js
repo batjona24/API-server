@@ -1,3 +1,4 @@
+
 console.clear();
 
 const form = document.getElementById("registration");
@@ -8,21 +9,37 @@ const onSubmit = async (event) => {
     const username = formData.get("username");
     const password = formData.get("password");
     const values = { username, password };
+
     const response = await fetch('/api/sign-up', {
         method: 'POST', headers: {
             'Content-Type': 'application/json; charset=utf-8 '
         }, body: JSON.stringify(values)
     })
     const data = await response.json();
-    if(data){
+   
+    if(response.ok) {
         window.alert("Account created");
         window.location.pathname = '/log-in';
-        console.log(data);
+        console.log(data);    
     }
-    else{
+    else {
         const p = document.createElement("p");
-        p.innerText="Username or password invalid";
+        const node = document.createTextNode("Username or password invalid");
+        p.appendChild(node);
+        const element = document.getElementById("error");
+        element.appendChild(p); 
     }
+    
+    // const data = await response.json();
+    // if(data){
+    //     window.alert("Account created");
+    //     window.location.pathname = '/log-in';
+    //     console.log(data);
+    // }
+    // else{
+    //     const p = document.createElement("p");
+    //     p.innerText="Username or password invalid";
+    // }
    
 };
 

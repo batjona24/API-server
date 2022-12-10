@@ -1,23 +1,23 @@
-<!DOCTYPE <!DOCTYPE html>
+<!DOCTYPE html>
 <html>
   <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <title>Address Form</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="stylesheet" href="tripsPage.css"/>
+    <link rel="stylesheet" href="trips.css"/>
   </head>
   <body>
     <nav>
       <ul id="menu">
         <li><a class="active1" href="./sign-up.html">REGISTER</a></li>
         <li><a class="nonactive1" href="./log-in.html">LOG IN</a></li>
-        <li><a class="nonactive1" href="./tripsPage.html">TRIPS PAGE</a></li>
+        <li><a class="nonactive1" href="./trips.html">TRIPS</a></li>
+        <li><button id="logout">Log out</button></li>
       </ul>
     </nav>
     <div>
-        <h1>TRIP PAGE</h1>
-        <h2>Create a trip now!</h2>
+        <h1>Update your trips!</h1>
         <form id="trips">
             <label>Date</label>
             <input type="date" name="date" placeholder="Select a date">
@@ -31,11 +31,9 @@
             <label>Rating</label>
             <input type="number" name="rating" placeholder="Rating" min="1" max="10">
 
-            <button id="btn" type="submit" name="submit">Create trip!</button>
+            <button id="btn" type="submit" name="submit">Update trip!</button>
         </form>
-        <button id="showTrip" type="submit" name="submit">Show trips!</button>
-    </div> <br>
-    <div id="container"></div>
-    <script src="tripsPage.js"></script>
+    </div>
+    <script src="update.js"></script>
   </body>
 </html>

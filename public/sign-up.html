@@ -1,4 +1,4 @@
-<!DOCTYPE <!DOCTYPE html>
+<!DOCTYPE html>
 <html>
   <head>
     <meta charset="utf-8" />
@@ -8,27 +8,29 @@
     <link rel="stylesheet" href="/sign-up.css">
   </head>
   <body>
-    <nav>
-      <ul id="menu">
-        <li><a href="/">REGISTER</a></li>
-        <li><a href="./log-in.html">LOG IN</a></li>
-        <li><a href="./tripsPage.html">TRIPS PAGE</a></li>
-      </ul>
-    </nav>
-    <br>
-    <form id="registration">
-        <h1>Registration form:</h1>
-        <h2>Please enter a username and a password to make the registration!</h2><br>
-        <label for="username">Username:</label><br>
-        <input type="text" id="username" name="username" placeholder="Enter your username..." minlength="5" maxlength="12"  required><br><br>
-        <label for="password">Password:</label><br>
-        <input type="password" id="password" name="password" placeholder="Enter your password..." minlength="5" maxlength="12"  required> <!--reg ex not fixed "/^(?=.[!?.:])(?=.*\d)(?=[A-Za-z]+$)/"  pattern='/^(?=[A-Za-z0-9!?.:]+$)/'-->
-        <br>  
-        <p>Your password must contain <strong>at least</strong> a number and a symbol!</p>
-        <br>
-        <button type="submit" name="submit">REGISTER</button>
-    </form>
-
+    <div class="menu">
+      <nav>
+        <ul id="menu">
+          <li><a href="/">REGISTER</a></li>
+          <li><a href="./log-in.html">LOG IN</a></li>
+        </ul>
+      </nav>
+    </div>
+    <div class="form">
+      <form id="registration">
+          <h1>Registration form:</h1>
+          <h2>Please enter a username and a password to make the registration!</h2><br>
+          <label for="username">Username:</label><br>
+          <input type="text" id="username" name="username" placeholder="Enter your username..." minlength="5" maxlength="12"  required><br><br>
+          <label for="password">Password:</label><br>
+          <input type="password" id="password" name="password" placeholder="Enter your password..." minlength="5" maxlength="12"  required> <!--reg ex not fixed "/^(?=.[!?.:])(?=.*\d)(?=[A-Za-z]+$)/"  pattern='/^(?=[A-Za-z0-9!?.:]+$)/' pattern="/^[ A-Za-z0-9!:.?]/" -->
+          <br>  
+          <p>Your password must contain <strong>at least</strong> a number and a symbol!</p>
+          <br>
+          <button type="submit" name="submit">REGISTER</button>
+      </form>
+    </div>
+    <div id="error"> </div>
     <script src="sign-up.js"></script>
   </body>
 </html>
