@@ -21,6 +21,7 @@ h1, h2 {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     color: aliceblue;
     border: 3px solid brown;
+    margin-top: 40px;
 }
 table, th, td{
     text-align: center;
