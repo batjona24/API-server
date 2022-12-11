@@ -12,21 +12,22 @@ body {
 #login {
     text-align: center;
     font-size: 18px;
+    display: grid;
 }
 #username {
     width: 20%;
-    margin-left: 1%;
+    margin-left: 40%;
 }
 #password {
     width: 20%;
-    margin-left: 1%;
+    margin-left: 40%;
 }
 button {
     width: 20%;
-    margin-left: 1%;
+    margin-left: 40%;
     height: 30px;
     background-color: green;
     color: white;
-    border-color: none
-    ;
+    border-color: none;
+    margin-top: 20px;
 }
