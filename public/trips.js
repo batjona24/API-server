@@ -35,6 +35,7 @@ async function showTrips() {
     for (const trip of data) {  
         const tr = document.createElement('tr');
         table.appendChild(tr);
+        // const trip_id = trip.id;
         for(const element in trip){
             const td = document.createElement('td');
             td.innerText = trip[element];
@@ -50,8 +51,16 @@ async function showTrips() {
         btn_delete.innerText = 'DELETE';
         updateTrip.appendChild(btn_update);
         deleteTrip.appendChild(btn_delete);
+        btn_update.setAttribute(`id`, `buttons`)
+        btn_delete.setAttribute(`id`, `buttons`)
+        btn_update.setAttribute(`class`, `buttons`)
+        btn_delete.setAttribute(`class`, `buttons`)
+        
         btn_update.addEventListener('click', async (event) => {
+            const update_btn = btn_update.id; 
+            window.localStorage.setItem("trip_id", update_btn);
             window.location.pathname = '/update';
+            
         });
         btn_delete.addEventListener('click', async (event) => {
             await fetch(`/api/trips/${trip.id}`, {

@@ -77,12 +77,6 @@ app.put('/api/trips/:id', async (request, response) => {
   const data_trip = request.body;
   await database.raw(`update trips set date ='${data_trip.date}', vacation ='${data_trip.vacation}', days = ${data_trip.days}, rating = ${data_trip.rating} where id=${id} `);
   const result = await database.raw(`select * from trips where id=${id}`);
-  // while (data_trip.property = trips.property) {
-  //  `date ='${data_trip.date}';
-  //   vacation ='${data_trip.vacation}';
-  //   days = ${data_trip.days};
-  //   rating = ${data_trip.rating}`
-  // };
   response.status(200);
   response.json(result); 
 });
