@@ -16,6 +16,7 @@ const onSubmit = async (event) => {
     })
     const data = await response.json();
     console.log(data);
+    autoRefresh(2000);
 };
 
 form.addEventListener("submit", onSubmit);
@@ -49,13 +50,21 @@ async function showTrips() {
         btn_delete.innerText = 'DELETE';
         updateTrip.appendChild(btn_update);
         deleteTrip.appendChild(btn_delete);
-        btn_update.addEventListener();
+        btn_update.addEventListener('click', async (event) => {
+            window.location.pathname = '/update';
+        });
         btn_delete.addEventListener('click', async (event) => {
             await fetch(`/api/trips/${trip.id}`, {
                 method: 'DELETE'
             })
-        });
-    }
+            window.alert("Trip deleted!");
+            autoRefresh(2000);
+        });  
+    }   
+}
+
+async function autoRefresh( t ) {
+    setTimeout("location.reload(true);", t);
 }
 
 showTrips();

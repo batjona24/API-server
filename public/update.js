@@ -9,13 +9,14 @@ const onSubmit = async (event) => {
     const days = formData.get("days");
     const rating = formData.get("rating");
     const values = { date, vacation, days, rating, user_id};
-    const response = await fetch(`/api/trips/${user_id}`, {
-        method: 'POST', headers: {
+    const response = await fetch(`/api/trips/${trips.id}`, {
+        method: 'PUT', headers: {
             'Content-Type': 'application/json'
         }, body: JSON.stringify(values)
     })
     const data = await response.json();
     console.log(data);
+    window.location.pathname('/trips');
 };
 
 form.addEventListener("submit", onSubmit);
