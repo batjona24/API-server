@@ -51,8 +51,8 @@ async function showTrips() {
         btn_delete.innerText = 'DELETE';
         updateTrip.appendChild(btn_update);
         deleteTrip.appendChild(btn_delete);
-        btn_update.setAttribute(`id`, `buttons`)
-        btn_delete.setAttribute(`id`, `buttons`)
+        btn_update.setAttribute(`id`, `${trip.id}`)
+        btn_delete.setAttribute(`id`, `${trip.id}`)
         btn_update.setAttribute(`class`, `buttons`)
         btn_delete.setAttribute(`class`, `buttons`)
         
