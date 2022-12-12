@@ -18,17 +18,17 @@
     </div>
     <div class="form">
       <form id="registration">
-          <h1>Registration form:</h1>
-          <h2>Please enter a username and a password to make the registration!</h2>
-          <label for="username">Username:</label>
-          <input type="text" id="username" name="username" placeholder="Enter your username..." minlength="5" maxlength="12"  required>
-          <label for="password">Password:</label>
-          <input type="password" id="password" name="password" placeholder="Enter your password..." minlength="5" maxlength="12"  required> <!--reg ex not fixed "/^(?=.[!?.:])(?=.*\d)(?=[A-Za-z]+$)/"  pattern='/^(?=[A-Za-z0-9!?.:]+$)/' pattern="/^[ A-Za-z0-9!:.?]/" -->  
-          <p>Your password must contain <strong>at least</strong> a number and a symbol!</p>
-          <button type="submit" class="button_submit" name="submit">REGISTER</button>
+        <h1>Registration form:</h1>
+        <h2>Please enter a username and a password to make the registration!</h2>
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" placeholder="Enter your username..." minlength="5" maxlength="12"  required>
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" placeholder="Enter your password..." pattern="(?=.*\d)(?=.*[!?.:]).{5,12}" title="Must contain at least one number and one special character, and 5-12 characters"> <!--reg ex not fixed "/^(?=.[!?.:])(?=.*\d)(?=[A-Za-z]+$)/"  pattern='/^(?=[A-Za-z0-9!?.:]+$)/' pattern="/^[ A-Za-z0-9!:.?]/" -->  
+        <p>Your password must contain <strong>at least</strong> a number and a symbol!</p>
+        <button type="submit" class="button_submit" name="submit">REGISTER</button>
       </form>
     </div>
-    <div id="error">
+    <div class="error">
       <p id="error_p"></p>
     </div>
     <script src="sign-up.js"></script>

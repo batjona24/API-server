@@ -16,7 +16,6 @@ const onSubmit = async (event) => {
         }, body: JSON.stringify(values)
     })
     const data = await response.json();
-   
     if(response.ok) {
         window.alert("Account created");
         window.location.pathname = '/log-in';
@@ -24,7 +23,7 @@ const onSubmit = async (event) => {
     }
     else {
         const p = document.getElementById("error_p");
-        p.innerText="Username or password invalid!" 
+        p.innerText = "Username or password invalid!" 
     }
 };
 

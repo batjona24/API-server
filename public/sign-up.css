@@ -14,7 +14,7 @@ body {
     font-size: 18px;
     display: grid;
 }
-#error {
+#error_p {
     text-align: center;
     font-size: 18px;
     color: red;

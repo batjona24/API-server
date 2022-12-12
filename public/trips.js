@@ -22,8 +22,8 @@ const onSubmit = async (event) => {
 form.addEventListener("submit", onSubmit);
 
 
-const btn = document.getElementById("showTrip");
-btn.addEventListener('click', showTrips);
+// const btn = document.getElementById("showTrip");
+// btn.addEventListener('click', showTrips);
 
 async function showTrips() {
     const user_id = Number(window.localStorage.getItem("user_id"));

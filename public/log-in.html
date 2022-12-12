@@ -15,15 +15,17 @@
       </ul>
     </nav>
     <form id="login">
-        <h1>LOG IN</h1>
-        <h2>Please enter your username and password to log in!</h2>
-        <label for="username">Username:</label>
-        <input type="text" id="username" name="username" placeholder="Enter your username..." required>
-        <label for="password">Password:</label>
-        <input type="password" id="password" name="password" placeholder="Enter your password..." required>
-        <button type="submit" name="submit">LOG IN</button>
+      <h1>LOG IN</h1>
+      <h2>Please enter your username and password to log in!</h2>
+      <label for="username">Username:</label>
+      <input type="text" id="username" name="username" placeholder="Enter your username..." required>
+      <label for="password">Password:</label>
+      <input type="password" id="password" name="password" placeholder="Enter your password..." required>
+      <button type="submit" name="submit">LOG IN</button>
     </form>
-    <div id="error"> </div>
+    <div class="error">
+      <p id="error_p"></p>
+    </div>
     <script src="log-in.js"></script>
   </body>
 </html>

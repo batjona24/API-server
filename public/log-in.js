@@ -22,11 +22,8 @@ const onSubmit = async (event) => {
         console.log(data);
     }
     else {
-        const p = document.createElement("p");
-        const node = document.createTextNode("Username or password invalid");
-        p.appendChild(node);
-        const element = document.getElementById("error");
-        //window.location.pathname = '/sign-up';
+        const p = document.getElementById("error_p");
+        p.innerText = "Username or password invalid!" 
     }
 };
 
