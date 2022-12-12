@@ -35,19 +35,6 @@ app.post('/api/sign-in',async (request, response) => {
   } 
 });
 
-// app.get('/api/trips/:id', async (request, response) => {
-//   const id = request.params.id;
-//   const result = await database.raw(`select * from trips where id = ${id}`);
-//   if(result.length !== 0) {
-//     response.status(200);
-//     response.json(result);  
-//   }
-//   else {
-//     response.status(404);
-//     response.json(`The trip with id = ${id} NOT FOUND!`);
-//   }  
-// });
-
 app.post('/api/trips/:user', async (request, response) => {
   const data_trip = request.body;
   const user = Number (request.params.user);
