@@ -10,13 +10,14 @@ const onSubmit = async (event) => {
     const days = formData.get("days");
     const rating = formData.get("rating");
     const values = { date, vacation, days, rating, user_id};
-    const response = await fetch(`/api/trips/:${trip_id}`, {
+    const response = await fetch(`/api/trips/${trip_id}`, {
         method: 'PUT', headers: {
             'Content-Type': 'application/json'
         }, body: JSON.stringify(values)
     })
     const data = await response.json();
     console.log(data);
+    window.alert('The trip was updated!');
     window.location.pathname = '/trips';
 };
 

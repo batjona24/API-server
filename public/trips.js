@@ -51,14 +51,14 @@ async function showTrips() {
         btn_delete.innerText = 'DELETE';
         updateTrip.appendChild(btn_update);
         deleteTrip.appendChild(btn_delete);
-        btn_update.setAttribute(`id`, `${trip.id}`)
-        btn_delete.setAttribute(`id`, `${trip.id}`)
-        btn_update.setAttribute(`class`, `buttons`)
-        btn_delete.setAttribute(`class`, `buttons`)
+        btn_update.setAttribute(`id`, `${trip.id}`);
+        btn_delete.setAttribute(`id`, `${trip.id}`);
+        btn_update.setAttribute(`class`, `buttons`);
+        btn_delete.setAttribute(`class`, `buttons`);
         
         btn_update.addEventListener('click', async (event) => {
-            const update_btn = btn_update.id; 
-            window.localStorage.setItem("trip_id", update_btn);
+            const update_id = btn_update.id; 
+            window.localStorage.setItem("trip_id", update_id);
             window.location.pathname = '/update';
             
         });
@@ -67,7 +67,7 @@ async function showTrips() {
                 method: 'DELETE'
             })
             window.alert("Trip deleted!");
-            autoRefresh(2000);
+            autoRefresh(1000);
         });  
     }   
 }

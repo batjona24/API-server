@@ -26,18 +26,6 @@ const onSubmit = async (event) => {
         const p = document.getElementById("error_p");
         p.innerText="Username or password invalid!" 
     }
-    
-    // const data = await response.json();
-    // if(data){
-    //     window.alert("Account created");
-    //     window.location.pathname = '/log-in';
-    //     console.log(data);
-    // }
-    // else{
-    //     const p = document.createElement("p");
-    //     p.innerText="Username or password invalid";
-    // }
-   
 };
 
 form.addEventListener("submit", onSubmit);
