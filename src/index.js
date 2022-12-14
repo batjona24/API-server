@@ -1,8 +1,10 @@
 import express from 'express';
 import database from './database.js';
 import CredentialsValidation from './CredentialsValidation.js';
+import cors from 'cors'; 
 
 const app = express();
+app.use(cors()); 
 app.use(express.json());
 app.use('/', express.static('./public', {extensions: ['html']}));
 
@@ -81,7 +83,7 @@ app.delete('/api/trips/:id', async (request, response) => {
   }
 });
  
-const port = 3000;
+const port = 4000;
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`)
 });
